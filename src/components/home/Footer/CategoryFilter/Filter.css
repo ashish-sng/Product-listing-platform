@@ -1,0 +1,58 @@
+.category__filter {
+  height: 60vh;
+  width: 25vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.filter__banner {
+  height: 22vh;
+  width: 18vw;
+  border-radius: 10px;
+  background-color: #36416a;
+  margin-bottom: 5vh;
+  text-align: left;
+  position: relative;
+}
+
+.filter__banner > span:first-child {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 1vh;
+  position: absolute;
+  bottom: 6vh;
+  left: 1vw;
+}
+
+.filter__banner > span:last-child {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #fff;
+  position: absolute;
+  bottom: 3vh;
+  left: 1vw;
+}
+
+.filter__items__list {
+  height: 35vh;
+  width: 16vw;
+  border-radius: 10px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  align-content: flex-start;
+  padding: 1vw;
+}
+
+.filter__items__list > span {
+  font-size: 0.8rem;
+  font-weight: 700;
+  background-color: #c0ceff;
+  margin: 0.4rem 0.5rem;
+  padding: 0.5rem 0.8rem;
+  border-radius: 1rem;
+}

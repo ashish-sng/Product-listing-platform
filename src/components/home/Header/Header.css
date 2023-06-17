@@ -1,0 +1,42 @@
+.header{
+    height: 10vh;
+    width: 100vw;
+    background-color: #36416A;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header > span {
+    color: white;
+    font-size: 2rem;
+    margin-left: 4rem;
+}
+
+.header__buttons{
+    width: 12vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 4rem;
+}
+
+.header__login__button {
+    background-color: #36416A;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.header__signup__button{
+    background-color: #36416A;
+    color: white;
+    border: 1px solid white;
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+}

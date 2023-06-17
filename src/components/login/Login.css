@@ -1,0 +1,74 @@
+.main__login {
+  height: 100vh;
+  width: 100vw;
+  background-color: #36416a;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main__login__header {
+  color: white;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  margin-left: 2vw;
+  text-align: left;
+  width: 35vw;
+  margin-top: 10vh;
+}
+
+.main__login__form {
+  height: 45vh;
+  width: 40vw;
+  background-color: white;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+.main__login__form__email__input {
+  margin-top: 11vh;
+}
+
+.main__login__form__email__input,
+.main__login__form__password__input {
+  height: auto;
+  width: 85%;
+  display: flex;
+  align-items: center;
+  margin-left: 2vw;
+}
+
+.main__login__form__email__input > input,
+.main__login__form__password__input > input {
+  width: 100%;
+  border: none;
+  border-bottom: #aaaaaa solid 2px;
+  margin-left: 1vw;
+}
+
+.main__login__form__footer {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  width: 80%;
+  margin-left: 2vw;
+  color: #737373;
+}
+
+.main__login__form__footer{
+    cursor: pointer;
+}
+
+.main__form__login__button {
+  align-self: flex-end;
+  margin-right: 2vw;
+  background-color: #36416a;
+  border-radius: 1rem;
+  color: white;
+  font-size: 1rem;
+  padding: 0.3rem 1.5rem;
+  cursor: pointer;
+}
