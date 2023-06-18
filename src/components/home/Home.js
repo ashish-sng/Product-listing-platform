@@ -3,6 +3,7 @@ import "./Home.css";
 import Header from "./Header/Header";
 import Banner from "./Banner/Banner";
 import Footer from "./Footer/Footer";
+import useProductContext from "../../hooks/useProductContext";
 
 const dummyData = [
   {
@@ -32,6 +33,8 @@ const dummyData = [
 ];
 
 const Home = () => {
+  const { loggedIn, setLoggedIn } = useProductContext();
+  console.log(loggedIn);
   return (
     <div className="main__home">
       <Header />

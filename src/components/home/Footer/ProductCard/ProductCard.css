@@ -6,7 +6,6 @@
   margin: 2vh 0;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease-in-out;
-  cursor: pointer;
 }
 
 .product__card__img {
@@ -75,9 +74,9 @@
   color: grey;
 }
 
-.product__card__comment > img{
-    height: 1.2rem;
-    width: auto;
+.product__card__comment > img {
+  height: 1.2rem;
+  width: auto;
 }
 
 .product__card__right {
@@ -97,7 +96,7 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  background-color: #C7CBD6;
+  background-color: #c7cbd6;
   font-size: 1.3rem;
   font-weight: 500;
   border-radius: 10px;
@@ -112,4 +111,14 @@
   border-radius: 50%;
   font-size: 1.3rem;
   font-weight: 500;
+}
+
+.product__card__all__comments {
+  height: 0;
+  overflow: hidden;
+  transition: height 0.3s ease;
+}
+
+.product__card__all__comments.open {
+  height: auto;
 }

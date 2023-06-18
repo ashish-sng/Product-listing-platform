@@ -16,8 +16,8 @@ const Filter = () => {
         <span>Apply Filter</span>
       </div>
       <div className="filter__items__list">
-        {productcategory.map((category) => (
-          <span>{category}</span>
+        {productcategory.map((category,index) => (
+          <span key={index}>{category}</span>
         ))}
       </div>
     </div>
