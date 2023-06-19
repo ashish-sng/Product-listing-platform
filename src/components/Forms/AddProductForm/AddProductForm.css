@@ -17,7 +17,7 @@
 .add__product__category__input,
 .add__product__logo__input,
 .add__product__product__link__input,
-.add__product__password__input {
+.add__product__description__input {
   height: auto;
   width: 85%;
   display: flex;
@@ -26,7 +26,7 @@
 }
 
 .add__product__company__input > input,
-.add__product__password__input > input,
+.add__product__description__input > input,
 .add__product__category__input > input,
 .add__product__logo__input > input,
 .add__product__product__link__input > input {
