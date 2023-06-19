@@ -3,23 +3,34 @@ import "./ProductCard.css";
 import comment1 from "../../../../assets/icons/comment1.png";
 import comment2 from "../../../../assets/icons/comment2.png";
 import upArrow from "../../../../assets/icons/upArrow.png";
+import axios from "axios";
 
 const ProductCard = ({ data }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [likeCount, setLikeCount] = useState(data.likes);
 
   const showComments = () => {
     setIsOpen(!isOpen);
   };
+
+  const increaseLike = async () => {
+    try {
+      const response = await axios.put(
+        `http://localhost:4000/products/${data._id}/like`
+      );
+      setLikeCount(response.data.likes);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <div className="product__card">
       <div className="product__card__img">
-        <img
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxgnkxyLid3xn09B6izDNDzdvm9vwPf6tgb0S4bekqsQ&s"
-          alt="product"
-        />
+        <img src={data.imageURL} alt="product" />
       </div>
       <div className="product__card__content">
-        <span>{data.name}</span>
+        <span>{data.companyName}</span>
         <span>{data.description}</span>
         <div className="product__card__last__section">
           <div className="product__card__category">
@@ -32,19 +43,14 @@ const ProductCard = ({ data }) => {
             <span>comment</span>
           </div>
         </div>
-        <div className={`product__card__all__comments ${isOpen ? "open" : ""}`}>
-          {data.comments.map((comment, index) => (
-            <span key={index}>{comment}</span>
-          ))}
-        </div>
       </div>
       <div className="product__card__right">
         <div className="product__card__likes">
-          <img src={upArrow} alt="upArrow" />
-          <span>{data.likes}</span>
+          <img onClick={increaseLike} src={upArrow} alt="upArrow" />
+          <span>{likeCount}</span>
         </div>
         <div className="product__card__comments">
-          <span>{data.comments.length}</span>
+          <span>{data.commentCount}</span>
           <img src={comment2} alt="comment" />
         </div>
       </div>
