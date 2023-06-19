@@ -3,10 +3,10 @@ import "./SignupPopup.css";
 import SignupForm from "../../Forms/SignupForm/SignupForm";
 import PopupBanner from "../PopupBanner/PopupBanner";
 
-const Signup = ({ setSignupPopup }) => {
+const Signup = () => {
   return (
     <div className="popup__signup">
-      <SignupForm setSignupPopup={setSignupPopup} />
+      <SignupForm />
       <PopupBanner />
     </div>
   );

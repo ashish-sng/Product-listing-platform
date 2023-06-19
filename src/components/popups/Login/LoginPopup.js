@@ -3,10 +3,10 @@ import "./LoginPopup.css";
 import LoginForm from "../../Forms/LoginForm/LoginForm";
 import PopupBanner from "../PopupBanner/PopupBanner";
 
-const LoginPopup = ({ setSignupPopup }) => {
+const LoginPopup = () => {
   return (
     <div className="login__popup">
-      <LoginForm setSignupPopup={setSignupPopup} />
+      <LoginForm />
       <PopupBanner />
     </div>
   );

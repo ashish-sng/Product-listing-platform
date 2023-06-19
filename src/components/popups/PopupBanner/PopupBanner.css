@@ -11,8 +11,20 @@
   padding-right: 2vw;
   color: white;
   text-align: left;
+  position: relative;
 }
 
-.popup__side__content > span:first-child {
+.popup__side__content > span:nth-child(1) {
   font-size: 2rem;
+  position: absolute;
+  top: 0vh;
+  right: 1vw;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.popup__side__content > span:nth-child(2) {
+  font-size: 2rem;
+  text-align: left;
+  width: 100%;
 }
