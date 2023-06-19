@@ -6,12 +6,10 @@ import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useNavigate } from "react-router-dom";
-import useProductContext from "../../../hooks/useProductContext";
 
-const LoginForm = () => {
+const LoginForm = (props) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const { setSignupPopup } = useProductContext();
   const navigate = useNavigate();
 
   const handlePassowrdChange = (e) => {
@@ -52,9 +50,8 @@ const LoginForm = () => {
     }
   };
 
-  const redirectSignup = () => {
-    setSignupPopup(true);
-  };
+  const { redirectSignup } = props;
+
   return (
     <div>
       <form className="login__form">

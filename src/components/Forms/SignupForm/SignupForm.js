@@ -8,17 +8,15 @@ import axios from "axios";
 import useProductContext from "../../../hooks/useProductContext";
 import { useNavigate } from "react-router-dom";
 
-const SignupForm = () => {
+const SignupForm = (props) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [mobile, setMobile] = useState("");
   const [name, setName] = useState("");
-  const { setLoggedIn, setSignupPopup, setPopup } = useProductContext();
+  const { setPopup } = useProductContext();
   const navigate = useNavigate();
 
-  const redirectLogin = () => {
-    setSignupPopup(false);
-  };
+  const { redirectLogin } = props;
 
   const onClose = () => {
     setPopup(false);
@@ -53,7 +51,6 @@ const SignupForm = () => {
       const response = await axios.post("http://localhost:4000/register", data);
       console.log(response.data.token);
       localStorage.setItem("token", response.data.token);
-      setLoggedIn(true);
       setEmail("");
       setPassword("");
       setMobile("");
