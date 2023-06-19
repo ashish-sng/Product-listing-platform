@@ -1,42 +1,71 @@
-.header{
-    height: 10vh;
-    width: 100vw;
-    background-color: #36416A;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.header {
+  height: 10vh;
+  width: 100vw;
+  background-color: #36416a;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .header > span {
-    color: white;
-    font-size: 2rem;
-    margin-left: 4rem;
+  color: white;
+  font-size: 2rem;
+  margin-left: 4rem;
 }
 
-.header__buttons{
-    width: 12vw;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-right: 4rem;
+.header__loggedIn {
+  width: 15vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 4rem;
+}
+
+.header__loggedIn > img{
+    height: 6vh;
+    width: 6vh;
+}
+
+.header__loggedIn > span {
+  color: white;
+  font-size: 1.2rem;
+  margin-right: 0.2rem;
+}
+
+.header__buttons {
+  width: 15vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 4rem;
+}
+
+.header__logout__button {
+  background-color: #36416a;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  font-size: 1.2rem;
+  cursor: pointer;
 }
 
 .header__login__button {
-    background-color: #36416A;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    padding: 0.5rem 1rem;
-    font-size: 1rem;
-    cursor: pointer;
+  background-color: #36416a;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  font-size: 1.2rem;
+  cursor: pointer;
 }
 
-.header__signup__button{
-    background-color: #36416A;
-    color: white;
-    border: 1px solid white;
-    border-radius: 5px;
-    padding: 0.5rem 1rem;
-    font-size: 1rem;
-    cursor: pointer;
+.header__signup__button {
+  background-color: #36416a;
+  color: white;
+  border: 1px solid white;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  font-size: 1.2rem;
+  cursor: pointer;
 }
