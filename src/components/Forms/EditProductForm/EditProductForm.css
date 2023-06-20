@@ -1,0 +1,81 @@
+.edit__product {
+  height: 45vh;
+  width: 35vw;
+  background-color: white;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+  align-items: flex-start;
+}
+
+.edit__product__company__input {
+  margin-top: 5vh;
+}
+
+.edit__product__company__input,
+.edit__product__category__input,
+.edit__product__logo__input,
+.edit__product__product__link__input,
+.edit__product__description__input {
+  height: auto;
+  width: 85%;
+  display: flex;
+  align-items: center;
+  margin-left: 2vw;
+}
+
+.edit__product__company__input > input,
+.edit__product__description__input > input,
+.edit__product__category__input > input,
+.edit__product__logo__input > input,
+.edit__product__product__link__input > input {
+  width: 100%;
+  border: none;
+  border-bottom: #aaaaaa solid 2px;
+  margin-left: 1vw;
+  outline: none;
+}
+
+.edit__product__footer {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  width: 80%;
+  margin-left: 2vw;
+  color: #737373;
+}
+
+.edit__product__footer {
+  cursor: pointer;
+}
+
+.edit__product__button {
+  align-self: flex-end;
+  margin-right: 3vw;
+  background-color: #36416a;
+  border: none;
+  border-radius: 1rem;
+  color: white;
+  font-size: 1rem;
+  padding: 0.3rem 1.5rem;
+  cursor: pointer;
+}
+
+/* Responsive Design  */
+@media screen and (max-width: 500px) {
+  .edit__product {
+    height: 30vh;
+    width: 85vw;
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    align-items: flex-start;
+  }
+
+  .edit__product__company__input {
+    margin-top: 0vh;
+  }
+}
