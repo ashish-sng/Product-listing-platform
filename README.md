@@ -7,7 +7,7 @@ Job Listing Platform is a web application built using the MERN stack (MongoDB, E
 
 1. Clone the repository:
 
-   git clone https://github.com/your-username/job-listing-platform.git
+   git clone https://github.com/ashish-sng/Product-listing-platform
 
 2. Navigate to the client directory:
 
