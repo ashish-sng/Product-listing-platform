@@ -4,12 +4,14 @@ import comment1 from "../../../../assets/icons/comment1.png";
 import comment2 from "../../../../assets/icons/comment2.png";
 import upArrow from "../../../../assets/icons/upArrow.png";
 import CommentBox from "./CommentBox/CommentBox";
+import useProductContext from "../../../../hooks/useProductContext";
 import axios from "axios";
 
 const ProductCard = ({ data }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [fullDescription, setFullDescription] = useState(false);
   const [likeCount, setLikeCount] = useState(data.likes);
+  const { setEditPopup, loggedIn, setPopup, setEditId } = useProductContext();
 
   const showComments = () => {
     setIsOpen(!isOpen);
@@ -28,6 +30,12 @@ const ProductCard = ({ data }) => {
 
   const showFullDescription = () => {
     setFullDescription(!fullDescription);
+  };
+
+  const openPopup = () => {
+    setEditPopup(true);
+    setPopup(true);
+    setEditId(data._id);
   };
 
   return (
@@ -56,6 +64,14 @@ const ProductCard = ({ data }) => {
               <img src={comment1} alt="comment" />
               <span>comment</span>
             </div>
+            {loggedIn && (
+              <button
+                className="product__card__edit__button"
+                onClick={openPopup}
+              >
+                Edit
+              </button>
+            )}
           </div>
         </div>
         <div className="product__card__right">

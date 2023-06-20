@@ -15,6 +15,10 @@ const ProductContext = createContext({
   setCategory: () => {},
   selectedCategory: [],
   setSelectedCategory: () => {},
+  editPopup: false,
+  setEditPopup: () => {},
+  editId: "",
+  setEditId: () => {},
 });
 
 const Provider = ({ children }) => {
@@ -25,6 +29,8 @@ const Provider = ({ children }) => {
   const [selected, setSelected] = useState("likes");
   const [category, setCategory] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState([]);
+  const [editPopup, setEditPopup] = useState(false);
+  const [editId, setEditId] = useState("");
 
   const valueToShare = {
     loggedIn,
@@ -41,6 +47,10 @@ const Provider = ({ children }) => {
     setCategory,
     selectedCategory,
     setSelectedCategory,
+    editPopup,
+    setEditPopup,
+    editId,
+    setEditId,
   };
 
   return (

@@ -7,6 +7,7 @@ import useProductContext from "../../../hooks/useProductContext";
 import SignupPopup from "../../popups/Signup/SignupPopup";
 import LoginPopup from "../../popups/Login/LoginPopup";
 import AddProductPopup from "../../popups/AddProduct/AddProductPopup";
+import EditProductPopup from "../../popups/EditProduct/EditProductPopup";
 import axios from "axios";
 
 const Footer = () => {
@@ -22,6 +23,7 @@ const Footer = () => {
     setCategory,
     selectedCategory,
     category,
+    editPopup,
   } = useProductContext();
 
   const handleOverlayClick = (e) => {
@@ -39,7 +41,7 @@ const Footer = () => {
   useEffect(() => {
     getProducts();
     // eslint-disable-next-line
-  }, [selected, products, selectedCategory]);
+  }, [selected, selectedCategory]);
 
   const getProducts = async () => {
     try {
@@ -67,7 +69,6 @@ const Footer = () => {
         }
       });
     });
-    // return categories;
     setCategory(categories);
   };
 
@@ -92,7 +93,11 @@ const Footer = () => {
       {popup && (
         <div className="signup__popup__overlay" onClick={handleOverlayClick}>
           {loggedIn ? (
-            <AddProductPopup />
+            editPopup ? (
+              <EditProductPopup />
+            ) : (
+              <AddProductPopup />
+            )
           ) : signupPopup ? (
             <SignupPopup />
           ) : (

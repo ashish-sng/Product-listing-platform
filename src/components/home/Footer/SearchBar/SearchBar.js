@@ -3,9 +3,10 @@ import "./SearchBar.css";
 import useProductContext from "../../../../hooks/useProductContext";
 
 const SearchBar = () => {
-  const { setPopup, selected, setSelected, products } = useProductContext();
+  const { setPopup, selected, setSelected, products,setEditPopup } = useProductContext();
 
   const openPopup = () => {
+    setEditPopup(false);
     setPopup(true);
   };
 

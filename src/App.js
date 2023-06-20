@@ -4,7 +4,6 @@ import Home from "./components/home/Home";
 import Login from "./components/login/Login";
 import Signup from "./components/signup/Signup";
 import { Provider } from "./context/ProductContext";
-// import useProductContext from './hooks/useProductContext';
 
 function App() {
   return (

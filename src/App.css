@@ -2,6 +2,27 @@
   text-align: center;
 }
 
+body {
+  /* overflow-y: hidden; Hide vertical scrollbar */
+  overflow-x: hidden; /* Hide horizontal scrollbar */
+}
+
+/* Hide the scrollbar */
+body::-webkit-scrollbar {
+  width: 0.5rem; /* Adjust the width as needed */
+  background: transparent;
+}
+
+/* Hide the scrollbar track */
+body::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Style the scrollbar thumb */
+body::-webkit-scrollbar-thumb {
+  background: transparent;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
