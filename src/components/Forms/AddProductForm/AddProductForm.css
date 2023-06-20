@@ -61,3 +61,21 @@
   padding: 0.3rem 1.5rem;
   cursor: pointer;
 }
+
+/* Responsive Design  */
+@media screen and (max-width: 500px) {
+  .add__product {
+    height: 30vh;
+    width: 85vw;
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    align-items: flex-start;
+  }
+
+  .add__product__company__input {
+    margin-top: 0vh;
+  }
+}

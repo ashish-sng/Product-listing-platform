@@ -28,3 +28,9 @@
   text-align: left;
   width: 100%;
 }
+
+@media (max-width: 500px) {
+  .popup__side__content {
+    display: none;
+  }
+}

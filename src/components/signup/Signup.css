@@ -16,3 +16,9 @@
   width: 35vw;
   margin-top: 10vh;
 }
+
+@media screen and (max-width: 500px) {
+  .main__signup__header {
+    width: 90vw;
+  }
+}

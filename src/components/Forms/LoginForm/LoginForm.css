@@ -40,8 +40,8 @@
   color: #737373;
 }
 
-.login__form__footer{
-    cursor: pointer;
+.login__form__footer {
+  cursor: pointer;
 }
 
 .form__login__button {
@@ -49,8 +49,47 @@
   margin-right: 2vw;
   background-color: #36416a;
   border-radius: 1rem;
+  border: none;
   color: white;
   font-size: 1rem;
   padding: 0.3rem 1.5rem;
   cursor: pointer;
+}
+
+/* Responsive Design  */
+@media screen and (max-width: 500px) {
+  .login__form {
+    height: 30vh;
+    width: 85vw;
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: flex-start;
+  }
+
+  .login__form__email__input {
+    margin-top: 5vh;
+  }
+
+  .login__form__footer {
+    gap: 0.5rem;
+  }
+
+  .login__form__footer {
+    cursor: pointer;
+  }
+
+  .form__login__button {
+    align-self: flex-end;
+    margin-right: 2vw;
+    background-color: #36416a;
+    border: none;
+    border-radius: 1rem;
+    color: white;
+    font-size: 1rem;
+    padding: 0.3rem 1rem;
+    cursor: pointer;
+  }
 }

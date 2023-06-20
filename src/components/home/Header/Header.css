@@ -21,9 +21,9 @@
   margin-right: 4rem;
 }
 
-.header__loggedIn > img{
-    height: 6vh;
-    width: 6vh;
+.header__loggedIn > img {
+  height: 6vh;
+  width: 6vh;
 }
 
 .header__loggedIn > span {
@@ -68,4 +68,80 @@
   padding: 0.5rem 1rem;
   font-size: 1.2rem;
   cursor: pointer;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 500px) {
+  .header {
+    height: 10vh;
+    width: 100vw;
+    background-color: #36416a;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .header > span {
+    color: white;
+    font-size: 1.5rem;
+    margin-left: 1rem;
+  }
+
+  .header__loggedIn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 30vw;
+  }
+
+  .header__loggedIn > img {
+    height: 6vh;
+    width: 6vh;
+    margin-bottom: 0.2rem;
+  }
+
+  .header__loggedIn > span {
+    color: white;
+    font-size: 1rem;
+    margin-right: 0.2rem;
+    margin-bottom: 0.2rem;
+  }
+
+  .header__buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    align-items: center;
+    margin-right: 30vw;
+  }
+
+  .header__logout__button {
+    background-color: #36416a;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 0rem 0.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+
+  .header__login__button {
+    background-color: #36416a;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 0.2rem 0.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+
+  .header__signup__button {
+    background-color: #36416a;
+    color: white;
+    border: 1px solid white;
+    border-radius: 5px;
+    padding: 0.2rem 0.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+  }
 }

@@ -56,3 +56,50 @@
   padding: 0.5rem 0.8rem;
   border-radius: 1rem;
 }
+
+.selected {
+  background-color: black;
+  color: #333;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 500px) {
+  .category__filter {
+    height: auto;
+    width: 90vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .filter__banner {
+    display: none;
+  }
+
+  .filter__items__list {
+    height: auto;
+    width: 100%;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    padding: 1vw;
+    margin: 2vh;
+  }
+
+  .filter__items__list > span {
+    font-size: 0.8rem;
+    font-weight: 600;
+    background-color: rgba(54, 65, 106, 0.15);
+    margin: 0.4rem 0.5rem;
+    padding: 0.5rem 0.8rem;
+    border-radius: 1rem;
+  }
+
+  .selected {
+    background-color: blue;
+    color: #333;
+  }
+}
