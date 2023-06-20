@@ -1,16 +1,29 @@
 import React from "react";
 import "./SearchBar.css";
+import useProductContext from "../../../../hooks/useProductContext";
 
-const SearchBar = ({ openPopup }) => {
+const SearchBar = () => {
+  const { setPopup, selected, setSelected, products } = useProductContext();
+
+  const openPopup = () => {
+    setPopup(true);
+  };
+
+  const handleSortChange = (e) => {
+    setSelected(e.target.value);
+  };
+
   return (
     <div className="footer__bar">
       <div className="footer__header__left">
-        <div className="products__list__length">10 Suggestions</div>
+        <div className="products__list__length">
+          {products.length} Suggestions
+        </div>
         <div class="custom__select">
           <span>Sort By:</span>
-          <select>
-            <option value="Upvotes">Upvotes</option>
-            <option value="Comments">Comments</option>
+          <select value={selected} onChange={handleSortChange}>
+            <option value="likes">Upvotes</option>
+            <option value="commentCount">Comments</option>
           </select>
           <span class="arrow"></span>
         </div>

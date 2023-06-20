@@ -9,13 +9,22 @@ const ProductContext = createContext({
   setSignupPopup: () => {},
   popup: false,
   setPopup: () => {},
+  selected: "likes",
+  setSelected: () => {},
+  category: [],
+  setCategory: () => {},
+  selectedCategory: [],
+  setSelectedCategory: () => {},
 });
 
 const Provider = ({ children }) => {
   const [loggedIn, setLoggedIn] = useState(false);
-  const [signupPopup, setSignupPopup] = useState(loggedIn);
+  const [signupPopup, setSignupPopup] = useState(true);
   const [products, setProducts] = useState([]);
   const [popup, setPopup] = useState(false);
+  const [selected, setSelected] = useState("likes");
+  const [category, setCategory] = useState([]);
+  const [selectedCategory, setSelectedCategory] = useState([]);
 
   const valueToShare = {
     loggedIn,
@@ -26,6 +35,12 @@ const Provider = ({ children }) => {
     setSignupPopup,
     popup,
     setPopup,
+    selected,
+    setSelected,
+    category,
+    setCategory,
+    selectedCategory,
+    setSelectedCategory,
   };
 
   return (

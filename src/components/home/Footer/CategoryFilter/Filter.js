@@ -1,14 +1,27 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./Filter.css";
+import useProductContext from "../../../../hooks/useProductContext";
 
 const Filter = () => {
-  const productcategory = [
-    "All",
-    "fintech",
-    "healthcare",
-    "education",
-    "ecommerce",
-  ];
+  const { category, selectedCategory, setSelectedCategory } =
+    useProductContext();
+
+  useEffect(() => {
+    console.log(selectedCategory);
+  }, [selectedCategory]);
+
+  const handleCategorySelection = (cat) => {
+    const singleCategory = cat.target.innerText;
+    console.log(selectedCategory);
+    if (selectedCategory.includes(singleCategory)) {
+      setSelectedCategory(
+        selectedCategory.filter((cat) => cat !== singleCategory)
+      );
+    } else {
+      setSelectedCategory([...selectedCategory, singleCategory]);
+    }
+  };
+
   return (
     <div className="category__filter">
       <div className="filter__banner">
@@ -16,8 +29,20 @@ const Filter = () => {
         <span>Apply Filter</span>
       </div>
       <div className="filter__items__list">
-        {productcategory.map((category,index) => (
-          <span key={index}>{category}</span>
+        <span
+          className={selectedCategory.length === 0 ? "selected" : ""}
+          onClick={() => setSelectedCategory([])}
+        >
+          All
+        </span>
+        {category.map((category, index) => (
+          <span
+            key={index}
+            onClick={handleCategorySelection}
+            className={selectedCategory.includes(category) ? "selected" : ""}
+          >
+            {category}
+          </span>
         ))}
       </div>
     </div>

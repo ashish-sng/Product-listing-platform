@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./AddProductForm.css";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
+import useProductContext from "../../../hooks/useProductContext";
 
 const AddProductForm = () => {
   const [companyName, setCompanyName] = useState("");
@@ -9,6 +10,7 @@ const AddProductForm = () => {
   const [imageURL, setImageURL] = useState("");
   const [productLink, setProductLink] = useState("");
   const [description, setDescription] = useState("");
+  const { setPopup } = useProductContext();
 
   const handleCompanyNameChange = (e) => {
     setCompanyName(e.target.value);
@@ -67,7 +69,11 @@ const AddProductForm = () => {
       toast.success("Product Added Successfully", {
         position: "top-center",
         autoClose: 1000,
+        hideProgressBar: true,
       });
+      setTimeout(() => {
+        setPopup(false);
+      }, 1000);
     } catch {
       toast.error("Something went wrong", {
         position: "top-center",

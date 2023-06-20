@@ -53,7 +53,7 @@ const LoginForm = (props) => {
   const { redirectSignup } = props;
 
   return (
-    <div>
+    <div onClick={() => {}}>
       <form className="login__form">
         <div className="login__form__email__input">
           <img src={mail} alt="mail" />
