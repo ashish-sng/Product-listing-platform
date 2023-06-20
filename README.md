@@ -1,5 +1,3 @@
-Certainly! Here's an updated version of the README.md file focusing on the client directory of your React project:
-
 # Job Listing Platform - Client
 
 ## Description
