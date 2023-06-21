@@ -41,7 +41,7 @@ const Footer = () => {
   useEffect(() => {
     getProducts();
     // eslint-disable-next-line
-  }, [selected, selectedCategory]);
+  }, [selected, popup, selectedCategory]);
 
   const getProducts = async () => {
     try {

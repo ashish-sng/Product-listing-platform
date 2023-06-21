@@ -6,11 +6,13 @@ import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useNavigate } from "react-router-dom";
+import useProductContext from "../../../hooks/useProductContext";
 
 const LoginForm = (props) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
+  const { setPopup, setLoggedIn } = useProductContext();
 
   const handlePassowrdChange = (e) => {
     setPassword(e.target.value);
@@ -34,6 +36,8 @@ const LoginForm = (props) => {
         autoClose: 2000,
       });
       setTimeout(() => {
+        setPopup(false);
+        setLoggedIn(true);
         navigate("/");
       }, 2000);
     } catch (err) {

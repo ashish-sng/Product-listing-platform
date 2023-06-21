@@ -1,7 +1,7 @@
 import React from "react";
 import "./Login.css";
 import LoginForm from "../Forms/LoginForm/LoginForm";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -12,10 +12,11 @@ const Login = () => {
         <h1>Feedback</h1>
         <h3>Add your products and give us your valuable feedback</h3>
       </div>
-      {/* {signupPopup ? <SignupForm/> : <LoginForm/>} */}
-      <LoginForm redirectSignup={() => {
-        navigate("/signup")
-      }} />
+      <LoginForm
+        redirectSignup={() => {
+          navigate("/signup");
+        }}
+      />
     </div>
   );
 };

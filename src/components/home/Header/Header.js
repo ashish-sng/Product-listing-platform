@@ -1,3 +1,4 @@
+import React, { useEffect } from "react";
 import "./Header.css";
 import { useNavigate } from "react-router-dom";
 import useProductContext from "../../../hooks/useProductContext";
@@ -5,6 +6,12 @@ import useProductContext from "../../../hooks/useProductContext";
 const Header = () => {
   const navigate = useNavigate();
   const { loggedIn, setLoggedIn } = useProductContext();
+
+  useEffect(() => {
+    if (localStorage.getItem("token")) {
+      setLoggedIn(true);
+    }
+  }, [setLoggedIn]);          // setLoggedIn is a dependency of useEffect
 
   const onHeaderLogin = () => {
     navigate("/login");
@@ -24,7 +31,9 @@ const Header = () => {
       <span>Feedback</span>
       {loggedIn ? (
         <div className="header__loggedIn">
-          <button className="header__logout__button" onClick={logoutHeader}>Logout</button>
+          <button className="header__logout__button" onClick={logoutHeader}>
+            Logout
+          </button>
           <span>Hello! </span>
           <img
             src={

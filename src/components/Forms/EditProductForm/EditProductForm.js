@@ -10,7 +10,8 @@ const EditProductForm = () => {
   const [imageURL, setImageURL] = useState("");
   const [productLink, setProductLink] = useState("");
   const [description, setDescription] = useState("");
-  const { setPopup, setEditPopup, editId } = useProductContext();
+  const { setPopup, setEditPopup, editId, setSignupPopup, setLoggedIn } =
+    useProductContext();
 
   useEffect(() => {
     axios.get(`http://localhost:4000/products/${editId}`).then((res) => {
@@ -68,7 +69,11 @@ const EditProductForm = () => {
         });
         return;
       }
-      const response = await axios.put(`http://localhost:4000/products`, data);
+      const response = await axios.put(`http://localhost:4000/products`, data, {
+        headers: {
+          Authorization: "Bearer " + localStorage.getItem("token"),
+        },
+      });
       console.log(response);
 
       setCompanyName("");
@@ -86,7 +91,20 @@ const EditProductForm = () => {
         setPopup(false);
         setEditPopup(false);
       }, 1000);
-    } catch {
+    } catch (err) {
+      if (err.response.status === 401) {
+        toast.error("Please login to continue", {
+          position: "top-center",
+          autoClose: 1000,
+        });
+        setTimeout(() => {
+          setPopup(true);
+          setSignupPopup(false);
+          setLoggedIn(false);
+        }, 1000);
+
+        return;
+      }
       toast.error("Something went wrong", {
         position: "top-center",
         autoClose: 1000,

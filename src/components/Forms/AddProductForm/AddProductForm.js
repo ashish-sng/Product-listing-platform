@@ -10,7 +10,7 @@ const AddProductForm = () => {
   const [imageURL, setImageURL] = useState("");
   const [productLink, setProductLink] = useState("");
   const [description, setDescription] = useState("");
-  const { setPopup } = useProductContext();
+  const { setPopup, setLoggedIn, setSignupPopup } = useProductContext();
 
   const handleCompanyNameChange = (e) => {
     setCompanyName(e.target.value);
@@ -57,8 +57,11 @@ const AddProductForm = () => {
         });
         return;
       }
-      const response = await axios.post("http://localhost:4000/products", data);
-      console.log(response);
+      await axios.post("http://localhost:4000/products", data, {
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
+      });
 
       setCompanyName("");
       setCategory("");
@@ -74,7 +77,20 @@ const AddProductForm = () => {
       setTimeout(() => {
         setPopup(false);
       }, 1000);
-    } catch {
+    } catch (err) {
+      if (err.response.status === 401) {
+        toast.error("Please login to add product", {
+          position: "top-center",
+          autoClose: 1000,
+        });
+        setTimeout(() => {
+          setPopup(true);
+          setSignupPopup(false);
+          setLoggedIn(false);
+        }, 1000);
+
+        return;
+      }
       toast.error("Something went wrong", {
         position: "top-center",
         autoClose: 1000,

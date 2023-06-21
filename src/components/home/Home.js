@@ -13,7 +13,7 @@ const Home = () => {
     if (token) {
       setLoggedIn(true);
     }
-  }, [setLoggedIn]);
+  }, []);
 
   return (
     <div className="main__home">
