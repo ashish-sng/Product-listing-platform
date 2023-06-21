@@ -71,7 +71,7 @@
 }
 
 /* Responsive Design */
-@media screen and (max-width: 500px) and (min-width: 250px)  {
+@media screen and (max-width: 500px) and (min-width: 200px)  {
   .header {
     height: 10vh;
     width: 100vw;

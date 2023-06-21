@@ -26,7 +26,7 @@
   font-size: 2rem;
 }
 
-@media screen and (max-width: 500px) and (min-width: 250px) {
+@media screen and (max-width: 500px) and (min-width: 200px) {
   .banner {
     display: flex;
     flex-direction: column;

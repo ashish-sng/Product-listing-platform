@@ -63,7 +63,7 @@
 }
 
 /* Responsive Design  */
-@media screen and (max-width: 500px) and (min-width: 250px)  {
+@media screen and (max-width: 500px) and (min-width: 200px)  {
   .edit__product {
     height: 30vh;
     width: 85vw;

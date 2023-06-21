@@ -16,7 +16,7 @@
   z-index: 999;
 }
 
-@media (max-width: 500px) and (min-width: 250px) {
+@media (max-width: 500px) and (min-width: 200px) {
   .footer__left {
     display: none;
   }

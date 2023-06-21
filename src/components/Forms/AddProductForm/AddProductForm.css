@@ -63,19 +63,19 @@
 }
 
 /* Responsive Design  */
-@media screen and (max-width: 500px) and (min-width: 250px)  {
+@media screen and (max-width: 500px) and (min-width: 200px)  {
   .add__product {
-    height: 30vh;
+    height: 35vh;
     width: 85vw;
     background-color: white;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
-    gap: 1.2rem;
+    gap: 1rem;
     align-items: flex-start;
   }
 
   .add__product__company__input {
-    margin-top: 0vh;
+    margin-top: 2vh;
   }
 }

@@ -17,7 +17,7 @@
   margin-top: 10vh;
 }
 
-@media screen and (max-width: 500px) and (min-width: 250px)  {
+@media screen and (max-width: 500px) and (min-width: 200px)  {
   .main__signup__header {
     width: 90vw;
   }
