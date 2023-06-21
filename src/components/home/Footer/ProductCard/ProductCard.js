@@ -13,6 +13,7 @@ const ProductCard = ({ data }) => {
   const [fullDescription, setFullDescription] = useState(false);
   const [likeCount, setLikeCount] = useState(data.likes);
   const { setEditPopup, loggedIn, setPopup, setEditId } = useProductContext();
+  const [commentCnt, setCommentCnt] = useState(data.commentCount);
 
   const showComments = () => {
     setIsOpen(!isOpen);
@@ -84,7 +85,7 @@ const ProductCard = ({ data }) => {
           </div>
         </div>
       </div>
-      {isOpen ? <CommentBox id={data._id} /> : null}
+      {isOpen ? <CommentBox commentCnt={commentCnt} setCommentCnt={setCommentCnt} id={data._id} /> : null}
     </div>
   );
 };
