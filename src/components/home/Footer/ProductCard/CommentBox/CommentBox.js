@@ -5,7 +5,7 @@ import axios from "axios";
 import useProductContext from "../../../../../hooks/useProductContext";
 import BASEURL from "../../../../../constants/base";
 
-const CommentBox = ({ id }) => {
+const CommentBox = ({ id, commentCnt, setCommentCnt }) => {
   const [loading, setLoading] = useState(false);
   const [comment, setComment] = useState("");
   const [comments, setComments] = useState([]);
@@ -57,6 +57,7 @@ const CommentBox = ({ id }) => {
               ...products,
               { ...product, commentCount: product.commentCount + 1 },
             ]);
+            setCommentCnt(commentCnt + 1);
           }
         });
         setComments([...comments, res.data]);
