@@ -2,14 +2,12 @@ import React, { useEffect, useState } from "react";
 import "./CommentBox.css";
 import arrowSubmit from "../../../../../assets/icons/arrowSubmit.png";
 import axios from "axios";
-import useProductContext from "../../../../../hooks/useProductContext";
 import BASEURL from "../../../../../constants/base";
 
 const CommentBox = ({ id, commentCnt, setCommentCnt }) => {
   const [loading, setLoading] = useState(false);
   const [comment, setComment] = useState("");
   const [comments, setComments] = useState([]);
-  const { products, setProducts } = useProductContext();
 
   useEffect(() => {
     axios
@@ -51,15 +49,7 @@ const CommentBox = ({ id, commentCnt, setCommentCnt }) => {
     axios
       .post(`${BASEURL}/comments`, data)
       .then((res) => {
-        products.forEach((product) => {
-          if (product._id === id) {
-            setProducts([
-              ...products,
-              { ...product, commentCount: product.commentCount + 1 },
-            ]);
-            setCommentCnt(commentCnt + 1);
-          }
-        });
+        setCommentCnt(commentCnt + 1);
         setComments([...comments, res.data]);
         setComment("");
       })

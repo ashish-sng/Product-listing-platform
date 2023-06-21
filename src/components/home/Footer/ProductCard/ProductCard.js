@@ -80,7 +80,7 @@ const ProductCard = ({ data }) => {
             <span>{likeCount}</span>
           </div>
           <div className="product__card__comments">
-            <span>{data.commentCount}</span>
+            <span>{commentCnt}</span>
             <img src={comment2} alt="comment" />
           </div>
         </div>
