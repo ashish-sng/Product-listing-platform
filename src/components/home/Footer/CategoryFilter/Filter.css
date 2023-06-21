@@ -70,6 +70,7 @@
     width: 90vw;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
   }
 
@@ -87,7 +88,7 @@
     flex-wrap: wrap;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     padding: 1vw;
-    margin: 2vh;
+    margin: 2vh 0 0 6vw;
   }
 
   .filter__items__list > span {
