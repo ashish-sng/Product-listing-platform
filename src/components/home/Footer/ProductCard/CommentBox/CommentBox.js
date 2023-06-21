@@ -26,7 +26,7 @@ const CommentBox = ({ id }) => {
       .finally(() => {
         setLoading(false);
       });
-  }, []);
+  }, [id]);
 
   const handleCommentChange = (e) => {
     setComment(e.target.value);

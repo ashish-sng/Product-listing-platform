@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import "./Filter.css";
 import useProductContext from "../../../../hooks/useProductContext";
 
@@ -6,13 +6,8 @@ const Filter = () => {
   const { category, selectedCategory, setSelectedCategory } =
     useProductContext();
 
-  useEffect(() => {
-    console.log(selectedCategory);
-  }, [selectedCategory]);
-
   const handleCategorySelection = (cat) => {
     const singleCategory = cat.target.innerText;
-    console.log(selectedCategory);
     if (selectedCategory.includes(singleCategory)) {
       setSelectedCategory(
         selectedCategory.filter((cat) => cat !== singleCategory)
