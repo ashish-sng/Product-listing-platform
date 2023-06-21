@@ -3,6 +3,7 @@ import "./CommentBox.css";
 import arrowSubmit from "../../../../../assets/icons/arrowSubmit.png";
 import axios from "axios";
 import useProductContext from "../../../../../hooks/useProductContext";
+import BASEURL from "../../../../../constants/base";
 
 const CommentBox = ({ id }) => {
   const [loading, setLoading] = useState(false);
@@ -12,7 +13,7 @@ const CommentBox = ({ id }) => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:4000/comments/`, {
+      .get(`${BASEURL}/comments/`, {
         params: { productId: id },
       })
       .then((res) => {
@@ -48,7 +49,7 @@ const CommentBox = ({ id }) => {
     };
 
     axios
-      .post("http://localhost:4000/comments", data)
+      .post(`${BASEURL}/comments`, data)
       .then((res) => {
         products.forEach((product) => {
           if (product._id === id) {

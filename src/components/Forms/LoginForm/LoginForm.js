@@ -7,6 +7,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useNavigate } from "react-router-dom";
 import useProductContext from "../../../hooks/useProductContext";
+import BASEURL from "../../../constants/base";
 
 const LoginForm = (props) => {
   const [email, setEmail] = useState("");
@@ -29,7 +30,7 @@ const LoginForm = (props) => {
       password,
     };
     try {
-      const response = await axios.post("http://localhost:4000/login", data);
+      const response = await axios.post(`${BASEURL}/login`, data);
       localStorage.setItem("token", response.data.token);
       toast.success("Login Successful", {
         position: "top-center",

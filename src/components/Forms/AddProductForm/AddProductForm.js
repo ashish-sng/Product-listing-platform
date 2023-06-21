@@ -3,6 +3,7 @@ import "./AddProductForm.css";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import useProductContext from "../../../hooks/useProductContext";
+import BASEURL from "../../../constants/base";
 
 const AddProductForm = () => {
   const [companyName, setCompanyName] = useState("");
@@ -57,7 +58,7 @@ const AddProductForm = () => {
         });
         return;
       }
-      await axios.post("http://localhost:4000/products", data, {
+      await axios.post(`${BASEURL}/products`, data, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },

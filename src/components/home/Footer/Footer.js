@@ -9,6 +9,7 @@ import LoginPopup from "../../popups/Login/LoginPopup";
 import AddProductPopup from "../../popups/AddProduct/AddProductPopup";
 import EditProductPopup from "../../popups/EditProduct/EditProductPopup";
 import axios from "axios";
+import BASEURL from "../../../constants/base";
 
 const Footer = () => {
   const [innerWidth, setInnerWidth] = useState(window.innerWidth);
@@ -45,7 +46,7 @@ const Footer = () => {
 
   const getProducts = async () => {
     try {
-      const response = await axios.get("http://localhost:4000/products", {
+      const response = await axios.get(`${BASEURL}/products`, {
         params: {
           sortBy: selected,
           category: selectedCategory.join(","),

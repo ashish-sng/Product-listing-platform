@@ -7,6 +7,7 @@ import mobileImg from "../../../assets/icons/mobileImg.png";
 import axios from "axios";
 import useProductContext from "../../../hooks/useProductContext";
 import { useNavigate } from "react-router-dom";
+import BASEURL from "../../../constants/base";
 
 const SignupForm = (props) => {
   const [email, setEmail] = useState("");
@@ -48,7 +49,7 @@ const SignupForm = (props) => {
     };
 
     try {
-      const response = await axios.post("http://localhost:4000/register", data);
+      const response = await axios.post(`${BASEURL}/register`, data);
       console.log(response.data.token);
       localStorage.setItem("token", response.data.token);
       setEmail("");

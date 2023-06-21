@@ -3,6 +3,7 @@ import "./EditProductForm.css";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import useProductContext from "../../../hooks/useProductContext";
+import BASEURL from "../../../constants/base";
 
 const EditProductForm = () => {
   const [companyName, setCompanyName] = useState("");
@@ -14,7 +15,7 @@ const EditProductForm = () => {
     useProductContext();
 
   useEffect(() => {
-    axios.get(`http://localhost:4000/products/${editId}`).then((res) => {
+    axios.get(`${BASEURL}/products/${editId}`).then((res) => {
       setCompanyName(res.data.companyName);
       setCategory(res.data.category);
       setImageURL(res.data.imageURL);
@@ -69,7 +70,7 @@ const EditProductForm = () => {
         });
         return;
       }
-      const response = await axios.put(`http://localhost:4000/products`, data, {
+      const response = await axios.put(`${BASEURL}/products`, data, {
         headers: {
           Authorization: "Bearer " + localStorage.getItem("token"),
         },

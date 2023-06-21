@@ -6,6 +6,7 @@ import upArrow from "../../../../assets/icons/upArrow.png";
 import CommentBox from "./CommentBox/CommentBox";
 import useProductContext from "../../../../hooks/useProductContext";
 import axios from "axios";
+import BASEURL from "../../../../constants/base";
 
 const ProductCard = ({ data }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -19,9 +20,7 @@ const ProductCard = ({ data }) => {
 
   const increaseLike = async () => {
     try {
-      const response = await axios.put(
-        `http://localhost:4000/products/${data._id}/like`
-      );
+      const response = await axios.put(`${BASEURL}/products/${data._id}/like`);
       setLikeCount(response.data.likes);
     } catch (error) {
       console.log(error);
