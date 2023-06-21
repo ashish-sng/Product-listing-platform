@@ -42,7 +42,7 @@ const Footer = () => {
   useEffect(() => {
     getProducts();
     // eslint-disable-next-line
-  }, [selected, popup, selectedCategory]);
+  }, [selected, popup, products, selectedCategory]);
 
   const getProducts = async () => {
     try {
