@@ -11,8 +11,15 @@ const EditProductForm = () => {
   const [imageURL, setImageURL] = useState("");
   const [productLink, setProductLink] = useState("");
   const [description, setDescription] = useState("");
+  const [innerWidth, setInnerWidth] = useState(window.innerWidth);
   const { setPopup, setEditPopup, editId, setSignupPopup, setLoggedIn } =
     useProductContext();
+
+  useEffect(() => {
+    window.addEventListener("resize", () => {
+      setInnerWidth(window.innerWidth);
+    });
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   useEffect(() => {
     axios.get(`${BASEURL}/products/${editId}`).then((res) => {
@@ -116,6 +123,9 @@ const EditProductForm = () => {
   return (
     <div>
       <form className="edit__product">
+        <div className="edit__product__heading">
+          {innerWidth < 500 ? <span>Edit your product</span> : null}
+        </div>
         <div className="edit__product__company__input">
           <input
             value={companyName}

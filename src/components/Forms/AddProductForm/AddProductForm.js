@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./AddProductForm.css";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
@@ -11,8 +11,14 @@ const AddProductForm = () => {
   const [imageURL, setImageURL] = useState("");
   const [productLink, setProductLink] = useState("");
   const [description, setDescription] = useState("");
+  const [innerWidth, setInnerWidth] = useState(window.innerWidth);
   const { setPopup, setLoggedIn, setSignupPopup } = useProductContext();
 
+  useEffect(() => {
+    window.addEventListener("resize", () => {
+      setInnerWidth(window.innerWidth);
+    });
+  }, []);   // eslint-disable-line react-hooks/exhaustive-deps
   const handleCompanyNameChange = (e) => {
     setCompanyName(e.target.value);
   };
@@ -102,6 +108,9 @@ const AddProductForm = () => {
   return (
     <div>
       <form className="add__product">
+        <div className="add__product__heading">
+          {innerWidth < 500 ? <span>Add your product</span> : null}
+        </div>
         <div className="add__product__company__input">
           <input
             value={companyName}
