@@ -1,0 +1,33 @@
+.not-found {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #f5f5f5;
+}
+
+.container {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 40px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.title {
+  font-size: 36px;
+  font-weight: bold;
+  color: #333;
+}
+
+.message {
+  font-size: 18px;
+  margin-top: 20px;
+  color: #777;
+}
+
+@media (max-width: 500px) and (min-width: 250px) {
+  .container {
+    max-width: 80%;
+  }
+}
