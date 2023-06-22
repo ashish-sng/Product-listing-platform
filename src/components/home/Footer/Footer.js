@@ -8,6 +8,7 @@ import SignupPopup from "../../popups/Signup/SignupPopup";
 import LoginPopup from "../../popups/Login/LoginPopup";
 import AddProductPopup from "../../popups/AddProduct/AddProductPopup";
 import EditProductPopup from "../../popups/EditProduct/EditProductPopup";
+import Loading from "../../Loading/Loading";
 import axios from "axios";
 import BASEURL from "../../../constants/base";
 
@@ -83,7 +84,7 @@ const Footer = () => {
         {innerWidth < 500 && <Filter />}
 
         {products.length === 0 ? (
-          <h1>Loading...</h1>
+          <Loading />
         ) : (
           products.map((product) => (
             <ProductCard key={product._id} data={product} />

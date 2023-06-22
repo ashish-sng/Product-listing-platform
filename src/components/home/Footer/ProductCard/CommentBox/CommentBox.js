@@ -3,6 +3,7 @@ import "./CommentBox.css";
 import arrowSubmit from "../../../../../assets/icons/arrowSubmit.png";
 import axios from "axios";
 import BASEURL from "../../../../../constants/base";
+import Loading from "../../../../Loading/Loading";
 
 const CommentBox = ({ id, commentCnt, setCommentCnt }) => {
   const [loading, setLoading] = useState(false);
@@ -71,7 +72,7 @@ const CommentBox = ({ id, commentCnt, setCommentCnt }) => {
         <img src={arrowSubmit} alt="addComment" onClick={handleSaveNotes} />
       </div>
       {loading ? (
-        <div>Loading...</div>
+        <Loading />
       ) : (
         <div className="comments__section">
           {comments.map((item, index) => (

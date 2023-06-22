@@ -51,7 +51,8 @@
 .filter__items__list > span {
   font-size: 0.8rem;
   font-weight: 700;
-  background-color: #c0ceff;
+  background-color: #cdd4ed;
+  /* background-color: red; */
   margin: 0.4rem 0.5rem;
   padding: 0.5rem 0.8rem;
   border-radius: 1rem;
@@ -59,12 +60,11 @@
 }
 
 .selected {
-  background-color: black;
-  color: #333;
+  background-color: #3e4a78 !important;
 }
 
 /* Responsive Design */
-@media screen and (max-width: 500px) and (min-width: 200px)  {
+@media screen and (max-width: 500px) and (min-width: 200px) {
   .category__filter {
     height: auto;
     width: 90vw;
@@ -98,10 +98,5 @@
     margin: 0.4rem 0.5rem;
     padding: 0.5rem 0.8rem;
     border-radius: 1rem;
-  }
-
-  .selected {
-    background-color: blue;
-    color: #333;
   }
 }
