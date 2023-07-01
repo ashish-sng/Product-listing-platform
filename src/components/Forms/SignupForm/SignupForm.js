@@ -8,6 +8,7 @@ import axios from "axios";
 import useProductContext from "../../../hooks/useProductContext";
 import { useNavigate } from "react-router-dom";
 import BASEURL from "../../../constants/base";
+import { ToastContainer, toast } from "react-toastify";
 
 const SignupForm = (props) => {
   const [email, setEmail] = useState("");
@@ -56,11 +57,22 @@ const SignupForm = (props) => {
       setPassword("");
       setMobile("");
       setName("");
+      toast.success("User created successfully", {
+        position: "top-center",
+        autoClose: 1000,
+      });
       setTimeout(() => {
         navigate("/");
       }, 1000);
     } catch (err) {
-      console.log(err);
+      if (err.response.status === 409) {
+        toast.error("User already exists", {
+          position: "top-center",
+          autoClose: 1000,
+        });
+      } else {
+        console.log(err);
+      }
     }
     onClose();
   };
@@ -116,6 +128,7 @@ const SignupForm = (props) => {
           Sign Up
         </button>
       </form>
+      <ToastContainer />
     </div>
   );
 };
