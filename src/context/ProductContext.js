@@ -1,25 +1,6 @@
 const { createContext, useState } = require("react");
 
-const ProductContext = createContext({
-  loggedIn: false,
-  setLoggedIn: () => {},
-  products: [],
-  setProducts: () => {},
-  signupPopup: false,
-  setSignupPopup: () => {},
-  popup: false,
-  setPopup: () => {},
-  selected: "likes",
-  setSelected: () => {},
-  category: [],
-  setCategory: () => {},
-  selectedCategory: [],
-  setSelectedCategory: () => {},
-  editPopup: false,
-  setEditPopup: () => {},
-  editId: "",
-  setEditId: () => {},
-});
+const ProductContext = createContext();
 
 const Provider = ({ children }) => {
   const [loggedIn, setLoggedIn] = useState(false);
